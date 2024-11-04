@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="" method="post">
+
+    <input type="button" value="somar" onclick="media()">
+   </form> 
+
+   <script>
+    function media(){
+        var numero = new Array(10); 
+            var soma = 0; 
+            var menoresQueZero = 0;
+
+            for (var i = 0; i < 10; i++) {
+                numero[i] = parseInt(prompt("Digite o número"));
+                soma += numero[i]; 
+             
+            }
+            
+        
+        var mediatotal = soma / 10
+        var maiorqueamedia = 0
+        
+         for(var x = 0; x < 10; x++)
+         if(numero[x] < 0){
+                menoresQueZero = menoresQueZero + 1
+                }
+
+        for(var y = 0; y < 10; y++)
+         if(numero[y] > mediatotal){
+            maiorqueamedia = maiorqueamedia + 1
+                }      
+
+       
+        alert(mediatotal + " " + " " + 
+        
+        
+        "é a media aritmetica dos numeros inseridos por voce") 
+        alert(menoresQueZero + " " + "Numero(s) São menores que 0")
+        alert(maiorqueamedia + " " + "Numero(s) são maior que a média aritmetica")
+
+        }
+   </script>
+</body>
+</html>

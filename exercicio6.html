@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Forças</title>
+
+</head>
+<body>
+    <h1>Cálculo de Forças</h1>
+    <h2>Situação 1: Força Resultante</h2>
+    <input type="number" id="massa" placeholder="Massa (kg)" required>
+    <input type="number" id="acel1" placeholder="Aceleração 1 (m/s²)" required>
+    <input type="number" id="acel2" placeholder="Aceleração 2 (m/s²)" required>
+    <button onclick="calculo2()">Calcular Força Resultante</button>
+    <div id="resultForca"></div>
+
+    <h2>Situação 2: Força de Ação e Reação</h2>
+    <input type="number" id="massa2" placeholder="Massa Objeto 1 (kg)" required>
+    <input type="number" id="massa3" placeholder="Massa Objeto 2 (kg)" required>
+    <input type="number" id="ac1" placeholder="Aceleração Objeto 1 (m/s²)" required>
+    <input type="number" id="ac2" placeholder="Aceleração Objeto 2 (m/s²)" required>
+    <button onclick="calculo2()">Calcular Força de Ação/Reação</button>
+    <div id="resultAcaoReacao"></div>
+
+    <script>
+        function calculo1() {
+            const massa = parseFloat(document.getElementById('massa').value);
+            const a1 = parseFloat(document.getElementById('acel1').value);
+            const a2 = parseFloat(document.getElementById('acel2').value);
+            const Resultante = a1 - a2;
+            const forcaResultante = massa * Resultante;
+            document.getElementById('resultForca').innerText = `Força resultante: ${forcaResultante.toFixed(2)} N`;
+        }
+
+        function calculo2() {
+            const massa2 = parseFloat(document.getElementById('massa2').value);
+            const massa3 = parseFloat(document.getElementById('massa3').value);
+            const ac1 = parseFloat(document.getElementById('ac1').value);
+            const ac2 = parseFloat(document.getElementById('ac2').value);
+            const forca1 = massa2 * ac1;
+            const forca2 = massa3 * ac2;
+            document.getElementById('resultAcaoReacao').innerText = `Força de ação/reação: ${forca1.toFixed(2)} N (mesma magnitude, sentidos opostos)`;
+        }
+    </script>
+</body>
+</html>

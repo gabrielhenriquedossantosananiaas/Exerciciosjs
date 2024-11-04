@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coletor de Números</title>
+</head>
+<body>
+    <h1>Coletor de Números</h1>
+    <button onclick="coletarNumeros()">Coletar Números</button>
+    
+    <h2>Números Inseridos:</h2>
+    <div id="todoss"></div> 
+
+    <script>
+   function coletarNumeros() {
+            var entrada = new Array(100); // Cria um vetor para armazenar até 100 números
+            var contagem = 0; // Contador para quantos números foram inseridos
+
+            for (var i = 0; i < 100; i++) {
+                var numero = parseInt(prompt("Digite um número (caso queira parar o programa digite 777):"));
+
+                if (numero === 777) { 
+                    break;
+                }
+
+                entrada[contagem] = numero; 
+                contagem++; 
+            }
+
+            calculo(entrada, contagem); 
+        }
+
+        function calculo(entrada, contagem) {
+            for (var i = 0; i < contagem; i++) {
+                document.getElementById('todoss').innerHTML += entrada[i] + "<br>"; 
+            }
+        }
+    
+        
+    </script>
+</body>
+</html>

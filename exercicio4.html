@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form action="" method="get">
+<h2>Quantos quilometros percorreu?</h2>
+<input type="number" id="quilometro">
+<h2>No dia de hoje quanto está o preço da gasolina?</h2>
+<input type="number" id="gasolina">
+<input type="button" value="Calcular o gasto" onclick="calculo()">    
+</form>    
+<h2 id="resultado"></h2>
+
+
+<script>
+function calculo(){
+    var kms = parseFloat(document.getElementById('quilometro').value);
+var gaso = parseFloat(document.getElementById('gasolina').value); 
+var calculo = (kms / 8) * gaso
+document.getElementById('resultado').innerHTML = calculo.toFixed(2)
+}
+</script>
+</body>
+</html>

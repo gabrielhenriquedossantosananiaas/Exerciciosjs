@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+<h1>Custo para assentar piso</h1>    
+
+<form action="">
+    <h2>informe o comprimento e largura</h2>
+    <input type="number" id="comprimento" placeholder="Comprimento">
+    <input type="number" id="largura" placeholder="Largura">
+    <input type="button" value="Calculo do piso" onclick="calcular()">
+</form>
+
+<h2 id="resultado"> </h2>
+
+<script>
+function calcular(){
+    l = parseInt(document.getElementById('largura').value);
+    c = parseInt(document.getElementById('comprimento').value);
+    soma = l * c;
+    custo = soma * 36;
+    document.getElementById('resultado').innerHTML = `Custo total: R$ ${custo.toFixed(6)}`;
+    
+}   
+</script>
+
+</body>
+</html>

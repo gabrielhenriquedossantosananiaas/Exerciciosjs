@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="" method="post">
+    <h2>    Quantos porcentos da liga é composto por metal(exemplo:20)</h2>
+    <input type="number" name="" id="metal"> 
+
+    <h2>    Quantos porcentos da liga é composto por ametal(exemplo:80) </h2>
+    <input type="number" name="" id="ametal">
+
+    <h1 id="Resultado"></h1>
+    <input type="button" value="Calcular" onclick="calcular()">
+</form>
+
+<script>
+    function calcular(){
+        var metal = parseFloat(document.getElementById('metal').value);
+        var ametal = parseFloat(document.getElementById('ametal').value);
+        var porcentagem = metal + ametal
+        
+        if(porcentagem == 100){
+            alert("O total é 100 porcento")
+
+            if(metal == ametal){
+                alert("A liga é composta por 50% de metal e 50% de ametal")
+            }
+
+            if(metal > ametal){
+                alert("A liga predominante é metalica, sendo" + " " + metal + " " + "%" )
+            }
+            
+            if(metal < ametal){
+                alert("A liga predominante é ametalica sendo" + " " + ametal + " " + "%")
+            }
+        }
+
+        else {
+            alert("erro a soma não equivale a 100% da liga")
+        }
+     
+    }
+</script>
+
+</body>
+</html>
